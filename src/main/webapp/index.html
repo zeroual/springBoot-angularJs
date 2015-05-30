@@ -1,0 +1,48 @@
+
+
+<!doctype html>
+<html >
+<head>
+    <title>Angularjs Example</title>
+    <meta charset="UTF-8">
+    <meta name=description content="">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="assets/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+</head>
+<body ng-app="app">
+<div class="container" ng-controller="PostsController">
+    <h1 class="text-center">Angularjs example</h1>
+   <div>
+        <form method="POST" role="form">
+            <legend>Exprime your self</legend>
+            <div class="form-group">
+                <label></label>
+                <input ng-model="postBody" type="text" class="form-control" >
+            </div>
+            <button class="btn btn-primary" ng-click="sharePostAction()">Share</button>
+        </form>
+   </div>
+    <hr/>
+    <div>
+    <ul class="list-group">
+    	<li class="list-group-item" ng-repeat="post in postArray">
+            <strong>@{{post.username}}</strong>
+            <span>{{post.postBody}}</span>
+        </li>
+    </ul>
+    </div>
+</div>
+    <script src="assets/jquery/dist/jquery.js"></script>
+    <script src="assets/angular/angular.js"></script>
+    <script src="assets/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/postController.js"/>
+    <script src="services/PostsService.js"/>
+<script>
+
+</script>
+</body>
+</html>
+
